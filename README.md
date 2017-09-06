@@ -2,7 +2,7 @@
 ## 小伙外卖项目介绍
 本项目仅用于学习，也是我学习django的笔记，还有一些内容等待完善。
 
-1.运行环境
+1. 运行环境
 -----
 * Python 3.5+
 * django 11.1
@@ -13,7 +13,7 @@ python3 manage.py runserver
 ```
 后台 `localhost/admin/`
 
-## 2. 数据库
+## 2.数据库
 默认使用sqlite3,若使用mysql需进行如下配置
 ```python
 # xiaohuo/setting.py

@@ -47,7 +47,7 @@ python3 manage.py createsuperuser
 1.添加轮播图 (限定五张)
 
 ![添加轮播图](readme_images/DeepinScreenshot_select-area_20170906221833.png)
-##
+--------
 
 
 2.添加顶级菜系、二级菜系、菜单

@@ -2,7 +2,8 @@
 ## 小伙外卖项目介绍
 本项目仅用于学习，也是我学习django的笔记，还有一些内容等待完善。
 
-## 1. 运行环境
+1. 运行环境
+======
 * Python 3.5+
 * django 11.1
 
@@ -49,20 +50,20 @@ python3 manage.py createsuperuser
 ![添加轮播图](readme_images/DeepinScreenshot_select-area_20170906221833.png)
 
 2. 添加顶级菜系、二级菜系、菜单
-
+------
 ![](readme_images/DeepinScreenshot_select-area_20170906221817.png)
 ![](readme_images/深度录屏_google-chrome_20170906222626.gif)
 
 3. 搜索
-
+------
 ![](readme_images/DeepinScreenshot_select-area_20170906222913.png)
 
 4. 登录、注册
-
+------
 ![](readme_images/深度录屏_google-chrome_20170906223854.gif)
 ![](readme_images/深度录屏_google-chrome_20170906224004.gif)
 
 5. 评论
-
+------
 ![](readme_images/DeepinScreenshot_select-area_20170906224714.png)
 ![](readme_images/深度录屏_google-chrome_20170906224753.gif)

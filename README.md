@@ -3,7 +3,7 @@
 本项目仅用于学习，也是我学习django的笔记，还有一些内容等待完善。
 
 1.运行环境
-======
+-----
 * Python 3.5+
 * django 11.1
 
@@ -44,9 +44,9 @@ python3 manage.py migrate
 ```
 python3 manage.py createsuperuser
 ```
-## 3. 功能介绍
+## 3.功能介绍
 1. 添加轮播图 (限定五张)
-======
+------
 ![添加轮播图](readme_images/DeepinScreenshot_select-area_20170906221833.png)
 
 2. 添加顶级菜系、二级菜系、菜单

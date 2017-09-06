@@ -1,0 +1,268 @@
+{% load staticfiles %}
+{% load nav_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="{% static 'takeout/base_images/favicon.ico' %}">
+	
+	<!-- title -->
+	{% block title%}
+	{% endblock title%} 
+	
+	<!-- css -->
+	<link rel="stylesheet" href="{% static 'takeout/css/base.css' %}">
+	{% block css %}
+	{% endblock css %}
+
+	<!-- js -->
+	<script type="text/script" src="{% static 'takeout/js/jquery.min.js' %}"></script>
+</head>
+<body>
+	<!--head start-->
+	<!-- 顶部 -->
+	<div  style ="background:#dddddd;width:100%;height :25px; position:fixed;z-index:3;top:0px;box-shadow:1px 1px 5px #282828;">
+		<!-- 头部 -->
+		<div id="dingbu" class="juzhong" width="1000px" >
+			<span style="margin-left:0px;color:black;">您好，欢迎来到小伙外卖！</span> | 
+			<span style="margin-left:0px;color:blue;">武汉</span>
+			{% if user.is_authenticated %}
+				<a class="ex1" href="#" style="margin-left:670px;">{{ user.username }}</a> | 
+				<a class="ex1" href="{% url 'logout' %}?next={{ request.path }}" style="margin-left:5px;">注销登录</a> |
+			{% else %}
+				<a class="ex1" href="{% url 'login' %}?next={{ request.path }}" style="margin-left:690px;">登录</a> | 
+				<a class="ex1" href="{% url 'user:register' %}" style="margin-left:5px;">注册</a> | 
+			{% endif %}
+			<a class="ex1" href="#" style="margin-left:5px;">帮助中心</a>
+		</div>
+	</div>
+	<div style="height:750px;">
+		<div class="bgc">
+			<div class="head juzhong">
+				{% block logo %}
+				{# logo #}
+				{% endblock logo %}
+
+				<!--搜索框-->
+				<div id="sousuo">
+					<form action="{% url 'takeout:search' %}" method="get" role="search" >
+						<input id="kuang" type="search" name="q" placeholder="请输入商品名称" />
+						<input id="btn" type="submit" value="搜索" />
+					</form>
+				</div>
+				<!-- 导航栏 -->
+				<div  id="nav">
+					<div class="dropdown">
+					    <a href="{% url 'takeout:index' %}" class="dropbtn">
+					    	首页
+						</a>
+					</div>
+
+					{% get_top_menu as top_menu %}
+					{% for top in top_menu %}
+					<div class="dropdown">
+					    <a href="" class="dropbtn">
+					    	{{ top.name }}
+						</a>
+						<div class="dropdown-content">
+						{% get_second_menu top.name as second_menu %}
+						{% for second in second_menu %}
+						    <a href="{% url 'takeout:menu' second.name %}" class="ex2">
+						        {{ second.name }}
+						    </a>
+						{% endfor %}  
+						</div>
+					</div>
+					{% endfor %}
+
+				</div>
+			</div>
+			<!--head end-->
+
+	{% block content %}
+	{% endblock content %}	
+
+	{% block foot %}
+	<!--foot start-->
+	<div class="foot">
+		<div id="footer" class="juzhong">
+	        <div class="lists">
+	            <div class="list">
+	                <h3>获取更新</h3>
+	                <ul>
+	                    <li><a href="#" class="ex3">邮件订阅</a></li>
+	                    <li><a href="#" class="ex3">iPhone/Android</a></li>
+	                    <li><a href="#" class="ex3">QQ空间</a></li>
+	                    <li><a href="#" class="ex3">新浪微博</a></li>
+	                </ul>
+	            </div>
+	            <div class="list">
+	                <h3>商务合作</h3>
+	                <ul>
+	                    <li><a href="#" class="ex3">商家合作</a></li>
+	                    <li><a href="#" class="ex3">小伙外卖商家营销平台</a></li>
+	                    <li><a href="#" class="ex3">到店餐饮代理商招募</a></li>
+	                    <li><a href="#" class="ex3">廉正邮箱</a></li>
+	                </ul>
+	            </div>
+	            <div class="list">
+	                <h3>公司信息</h3>
+	                <ul>
+	                    <li><a href="#" class="ex3">关于小伙外卖</a></li>
+	                    <li><a href="#" class="ex3">加入我们</a></li>
+	                    <li><a href="#" class="ex3">法律声明</a></li>
+	                    <li><a href="#" class="ex3">用户协议</a></li>
+	                    <li><a href="#" class="ex3">小伙外卖安全管理办法</a></li>
+	                    <li><a href="#" class="ex3">营业执照</a></li>
+	                </ul>
+	            </div>
+	            <div class="list">
+	                <h3>用户帮助</h3>
+	                <ul>
+	                    <li><a href="#" class="ex3">申请退款</a></li>
+	                    <li><a href="#" class="ex3">常见问题</a></li>
+	                    <li><a href="#" class="ex3">开放API</a></li>
+	                    <li><a href="#" class="ex3">反诈骗公告</a></li>
+	                </ul>
+	            </div>
+		    	<div class="clear"></div> 
+			</div>
+			<!-- 二维码 -->
+			<div class="tu">
+	            <span style="margin-left:80px;"><img src="{% static 'takeout/base_images/erweima.jpg' %}"/><span>
+	            <span style="position:absolute;top:110px;left:75px;">关注微信公众号</span>
+			</div>
+	    </div>
+	    <!-- 页脚 -->
+	    <div style="color:#666666;position:absolute;bottom: 0px; background-color: #2A2A2A; width:100%;height:30px;font-size:12px;">
+		    	<p style="position:absolute;left:50%;margin-left:-270px;top:5px;color:white;">&amp;&copy;2017 小伙外卖 <a class="ex6" href="">xiaohuo.com</a> <a class="ex6" href="">京ICP证070791号</a> | <a class="ex6" href="">京ICP备10211739号</a> | <a class="ex6" href="">电子公告服务规则</a></p>
+	     </div>
+    <div>
+	<!--foot end-->
+	{% endblock foot %}
+
+	{% block dock %}
+	{% endblock dock %}
+
+<!-- 轮播 -->
+<script>
+    window.$ = HTMLElement.prototype.$ = function(selector) {
+    var elems = (this == window ? document: this).querySelectorAll(selector);
+    return elems == null ? null: elems.length == 1 ? elems[0] : elems;
+}
+/*广告图片数组*/
+var imgs = [
+{% get_banner as banners %}
+{% for banner in banners %}
+	{
+	    "i": {{ banner.position }} - 1,
+	    "img": "{{ banner.image }}"
+	},
+{% endfor %}
+];
+
+var adv = {
+    LIWIDTH: 500,
+    DURATION: 300,
+    //手动移动的动画总时长
+    WAIT: 3000,
+    //自动轮播之间等待的时长
+    STEPS: 100,
+    //动画移动的总步数
+    timer: null,
+    //保存当前正在播放的定时器的序号
+    canAuto: true,
+    //设置是否可以自动轮播
+    init: function() {
+        var self = this;
+        self.updateView();
+
+        $("#slider").addEventListener("mouseover",
+        function() {
+            self.canAuto = false;
+        },
+        false);
+        $("#slider").addEventListener("mouseout",
+        function() {
+            self.canAuto = true;
+        },
+        false);
+        self.automove(); 
+        $("#indexs").addEventListener("mouseover",
+        function() {
+            var e = window.event || arguments[0];
+            var target = e.target || e.srcElement;
+            if (target.nodeName == "LI" && target.innerHTML - 1 != imgs[0].i) {
+                $("#indexs>.hover").className = "";
+                target.className = "hover";
+                var n = target.innerHTML - 1 - imgs[0].i;
+                self.move(n);
+            }
+        },
+        false);
+    },
+    updateView: function() { 
+        $("#imgs").style.width = this.LIWIDTH * imgs.length + "px";
+        for (var i = 0,
+        lis = [], idxs = []; i < imgs.length; i++) {
+            lis[i] = "<li data-i='" + imgs[i].i + "'><img src='" + imgs[i].img + "' width='1000px'></li>";//轮播图片宽度调节
+            idxs[i] = "<li>" + (i + 1) + "</li>";
+        }
+        $("#imgs").innerHTML = lis.join("");
+        $("#indexs").innerHTML = idxs.join("");
+        $("#indexs>.hover").className = "";
+        $("#indexs>li")[imgs[0].i].className = "hover";
+    },
+
+    automove: function() {
+        var self = this;
+        self.timer = setTimeout(function() {
+            if (self.canAuto) {
+                self.moveStep(1)
+            } else {
+                self.automove();
+            }
+        },
+        self.WAIT);
+    },
+
+    //移动任一个li的方法
+    move: function(n) { 
+        clearTimeout(this.timer);
+        this.timer = null;
+        if (n < 0) {
+            imgs = imgs.splice(imgs.length + n, -n).concat(imgs);
+            this.updateView();
+            $("#imgs").style.left = n * this.LIWIDTH + "px";
+        }
+        this.moveStep(n);
+    },
+
+    //将ul移动一次
+    moveStep: function(n) { 
+        var self = this;
+        var step = self.LIWIDTH * n / self.STEPS;
+        var style = getComputedStyle($("#imgs"));
+        var left = parseFloat(style.left) - step;
+        $("#imgs").style.left = left + "px";
+        if (n > 0 && left > -self.LIWIDTH * n || n < 0 && left < 0) {
+            self.timer = setTimeout(function() {
+                self.moveStep(n)
+            },
+            self.DURATION / self.STEPS);
+        } else {
+            $("#imgs").style.left = "0px";
+            self.automove();
+            if (n > 0) {
+                imgs = imgs.concat(imgs.splice(0, n));
+                self.updateView();
+            }
+        }
+    }
+}
+adv.init();
+</script>
+</body>
+</html>

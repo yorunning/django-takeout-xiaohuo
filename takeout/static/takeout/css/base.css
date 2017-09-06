@@ -1,0 +1,247 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*背景色*/
+.bgc{
+	width: 100%;
+	height:600px;
+	background-color: #71969F;
+	/*3BAA3B*/
+	margin-top:-15px;
+}
+/*居中*/
+.juzhong{
+	margin:0px auto;
+}
+/*head start*/
+.head{
+	width:1000px;
+	height:120px;
+}
+#dingbu{
+	width:1000px;
+	height:25px;
+	font-size:12px;
+	padding-top:5px;
+}
+a.ex1:link{
+	color:black;
+	text-decoration:none;
+}
+a.ex1:visited{
+	color:black;
+	text-decoration:none;
+}
+a.ex1:hover{
+	color:red;
+	cursor:pointer;
+}
+/*logo*/
+#logo{
+	width:150px;
+	height:50px;
+	position: relative;
+	top:23%;
+	left:0%;
+	z-index:1;
+}
+#logo img{
+	width: 180px;
+}
+/*搜索框*/
+#sousuo{
+	width:1000px;
+	height:30px;
+	top:50px;
+	position:absolute;
+}
+#sousuo form #kuang{
+	width:380px;
+	height:30px;
+	position:absolute;
+	margin-left:615px;
+	font-size:15px;
+	border:2px solid #2BB8AA;
+}
+#sousuo form #btn{
+	width:60px;
+	height:30px;
+	position:absolute;
+	margin-left:940px;
+	background-color:#2BB8AA;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	border:0px;
+}
+/*导航栏*/
+.dropbtn {
+    display: inline-block;
+    background-color: #2BB8AA;
+    color:white;/*#c6e2ff*/
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    margin-left :105px;  /*按钮位置调节*/
+    width:80px;/*导航宽度*/
+}
+a.ex2:hover,.dropdown:hover .dropbtn{
+	background-color:#31A59B;/*上面bgc*/
+}
+.dropdown {
+	display:inline-block;
+}
+.dropdown-content {
+	display:none;
+	position:absolute;
+	background-color:white;
+	min-width:113px;/*下拉条宽度*/
+	box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-left :105px;/*下拉框位置调节*/
+    z-index:2;
+}
+.dropdown-content a {
+	color:black;
+	padding:12px 36px;/*12 16*/
+	text-decoration:none;
+	display:block; 
+}
+.dropdown-content a.ex2:hover {
+	background-color:#2BB8AA;/*下面bgc*/
+	color:white;/*下面color*/
+}
+.dropdown:hover .dropdown-content {
+	display:block;
+}
+#nav {             
+	background-color:#2BB8AA ;
+    width :1000px;
+    margin:0 auto;
+    position: absolute;
+    top:100px;
+    z-index:2;
+}
+/*head end*/
+
+/*content start*/
+#content{
+	width: 1000px;
+	height: 460px;
+	position:absolute;
+	top:150px;
+	left: 50%;
+	margin-left:-500px;
+}
+/*content end*/
+
+/*foot start*/
+.foot{
+	width:100%;
+	height:230px;
+	position:relative;
+	background-color:#F9F9F9;
+}
+#footer{
+	width:1000px;
+	height:230px;
+	position:relative;
+}
+.list{
+	float:left;
+	margin-left:80px;
+	color:#666666;
+}
+.clear{
+	claer:both;
+}
+.list h3{
+	font-size:12px;
+}
+.list li{
+	list-style-type:none;
+	font-weight:500;
+	font-size:10px;
+	margin-top:10px;
+}
+a.ex3:link{
+	color:#666666;
+	text-decoration:none;
+}
+a.ex3:visited{
+	color:#666666;
+	text-decoration:none;
+}
+a.ex3:hover{
+	text-decoration:underline;
+	color:black;
+	cursor:pointer;
+}
+.tu{
+	width:300px;
+	height:150px;
+	position:absolute;
+	margin-left:720px;
+}
+a.ex6:link{
+	color:white;
+	text-decoration:none;
+}
+a.ex6:visited{
+	color:white;
+	text-decoration:none;
+}
+a.ex6:hover{
+	color:white;
+	text-decoration:underline;
+	cursor:pointer;
+}
+/*foot end*/
+
+/*中下 start*/
+.zhongxia{
+	margin-top:30px;
+	width:1100px;
+	height:400px;
+	position: relative;
+}
+.zhongxia li{
+	height:200px;
+	width:300px;
+	float:left;
+	margin-left:48px;
+	list-style-type:none;
+}
+.zhongxia li img{
+	box-shadow:1px 1px 10px #282828;
+	width:300px;
+	height:200px;
+	cursor:pointer;
+}
+.zhongxia #wenzi li{
+	margin-top: 10px;
+	margin-left:55px;
+	color:black;
+	font-size: 12px;
+	font-family: SimHei;
+	height: 100px;
+	cursor:pointer;
+}
+.zhongxia #wenzi li p{
+	color:#006600;
+	font-size: 25px;
+	text-align: center;
+	font-family: YouYuan;
+}
+/*中下 end*/
+
+/*轮播 start*/
+#slider_box ul{ padding: 0px; margin: 0px; list-style-type: none; }
+#slider_box { width: 1000px; float: left; border:0px red solid;margin-top: 20px;}
+#slider { width:1000px; height: 500px; margin-top: 0px; position: relative; overflow: hidden; box-shadow:1px 1px 70px #282828;}
+#slider #imgs { position: absolute; top: 0; left: 0; width:1000px;}
+#slider #imgs li { float: left; z-index: 0; }
+#slider  #indexs { position: absolute; bottom: 15px; right: 30px; }
+#slider #indexs  li { width: 22px; height: 22px; line-height: 22px; display: inline-block; background: #3e3e3e; color: #fff; border-radius: 50%; text-align: center; cursor: pointer; margin-left: 10px; }
+#slider #indexs li.hover { background: #b61b1f; }
+/*轮播 end*/

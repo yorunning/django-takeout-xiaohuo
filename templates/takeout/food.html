@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block title %}
+<title>小伙外卖网 | 美食 - {{ food.name }}</title>
+{% endblock %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'takeout/css/food.css' %}">
+{% endblock css %} 
+
+
+{% block logo %}
+	<div id="logo"><a href="/"><img src="{% static 'takeout/base_images/logotu2.png' %}"></a></div>			
+{% endblock logo %}
+
+
+{% block content %}
+<!--content start-->
+<div class="jieshao juzhong">
+	<!-- 菜介绍 -->
+	<h3>{{ food.name }}</h3>
+	<div class="tupian">
+		<img src="{{ food.image }}" width="500" height="300">
+	</div>
+	<!-- 购买模块 -->
+	<div class="jiage">
+		<div style="border-top:1px solid black;border-bottom:1px solid black;width:290px;height:90px;margin-top:50px;margin-left:8px;"></div>
+
+		<span style="position:absolute;left:5px;top:10px;">单价：</span>
+		<span style="position:absolute;right:5px;top:10px;">{{ food.price }}</span>
+
+		<span style="position:absolute;left:5px;top:85px;">数量：</span>
+		<span ><input type="number" value="1" min="1" max="5" id="shuzi"></span>
+
+		<span style="position:absolute;left:5px;top:160px;">总价：</span>
+		<span style="position:absolute;right:5px;top:160px;color:#2BB8AA;font-weight:600;" >{{ food.price }}</span>
+	</div>
+	<form action="denglu.html">
+		<input type="submit" value="立即下单" id="sub">
+	</form>
+	<!-- 评论区 -->
+	<p>发表评论</p>
+	<div class="pinglun">
+	{% if user.is_authenticated %}
+		<form action="{% url 'comments:comment' food.pk %}" method="post">
+		{% csrf_token %}
+            {% for field in form %}
+            {{ field.label_tag }}
+            <br>
+            {{ field }}
+            {{ field.errors }}
+            <br>
+            {% endfor %}
+            <button type="submit">发表</button>
+        </form>
+       {% else %}
+       你没有登录，请先登录后在评论。
+       {% endif %}
+	</div>
+	
+	<p style="position:relative; top:680px; width:200px;">评论列表，共 <span>{{ food.comment_set.count }}</span>条评论</p>
+	<div class="pinglun_list">
+        <ul class="">
+        {% for comment in comments %}
+            <li class="comment-item">
+                <span class="username">{{ comment.user }}</span>
+                <span class="submit-date">{{ comment.created_time }}</span>
+                <div class="text">{{ comment.text }}</div>
+                <br><hr>
+            </li>
+        {% empty %}
+        暂无评论<br><br>
+        {% endfor %}
+        </ul>
+	</div>
+</div>
+<!--content end-->
+{% endblock content %}
+
+{% block foot %}
+{% endblock foot %}

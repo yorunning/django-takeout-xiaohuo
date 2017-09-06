@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block title %}
+<title>小伙外卖网 | 更多 - {{ menu.name }}</title>
+{% endblock %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'takeout/css/menu.css' %}">
+{% endblock css %} 
+
+
+{% block logo %}
+	<div id="logo"><a href="/"><img src="{% static 'takeout/base_images/logotu2.png' %}"></a></div>			
+{% endblock logo %}
+
+
+{% block content %}
+	<!--content start-->
+	<!-- 菜谱 -->
+		<div id="content_2" class="juzhong">
+			<div class="midbox" id="chuancai">
+				<span style="font-size:18px;">全部{{ menu.name }}<span>
+				<ul>
+					{% for food in food_list %}
+						<li><a href="{{ food.get_absolute_url }}"><img src="{{ food.image }}"  /><div class="zizi">{{ food.name }}</div></a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	<!--content end-->
+{% endblock content%}
+
+
+{% block foot %}
+{% endblock foot %}

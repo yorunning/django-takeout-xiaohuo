@@ -1,0 +1,88 @@
+.bgc{
+	width: 100%;
+	height:600px;
+	background-color: #fff;
+}
+.jieshao{
+	width:1000px;
+	height:700px;
+	position:relative;
+	top:50px;
+}
+.jieshao h3{
+	width:500px;
+	height:30px;
+	position:absolute;
+	top:30px;
+	left:70px;
+}
+.jieshao .tupian{
+	width:500px;
+	height:300px;
+	position:absolute;
+	top:80px;
+	left:70px;
+}
+.jieshao .jiage{
+	width:300px;
+	height:300px;
+	position:absolute;
+	top:120px;
+	right:70px;
+}
+.jiage #shuzi{
+	width:50px;
+	height:30px;
+	position:absolute;
+	top:80px;
+	right:5px;
+	font-size:20px;
+}
+.jieshao p{
+	width:100px;
+	height:20px;
+	position:absolute;
+	top:400px;
+	left:68px;
+	font-size:15px;
+}
+.jieshao .pinglun{
+	border:2px solid #DDDDDD;
+	width:860px;
+	/*height:200px;*/
+	position:absolute;
+	top:430px;
+	right:70px;
+}
+.jieshao #sub{
+	position:absolute;
+	top:330px;
+	right:190px;
+	width:100px;
+	height:40px;
+	cursor:pointer;
+	background-color:#2BB8AA;
+	color:white;
+	border:0px;
+}
+.pinglun_list{
+	border:1px solid black;
+	width:860px;
+	position:relative;
+	top :690px;
+	left:67px;
+}
+.pinglun_list li{
+	list-style-type: none;
+}
+.pinglun_list li .username{
+	font-size:30px;
+	color:#2BB8AA;
+}
+.pinglun_list li .submit-date{
+	font-size:10px;
+	color:black;
+}
+.pinglun_list li .text{
+	font-size:20px;
+}

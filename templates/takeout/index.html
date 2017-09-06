@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load nav_tags %}
+
+{% block title %}
+<title>小伙外卖网</title>
+{% endblock %}
+
+{% block logo %}
+	<div id="logo"><a href="/" ><img src="{% static 'takeout/base_images/logotu1.png' %}"></a></div>			
+{% endblock logo %}
+
+
+{% block content %}
+<!--content start-->
+		<div id="content" class="juzhong" >
+			<!--轮播-->
+	  		<div id="slider_box" >
+	    		<div id="slider" class="juzhong">
+	      			<ul id="imgs">
+	      			</ul>
+	      			<ul id="indexs">
+	        			<li class="hover">1</li>
+	                   	<li>2</li>
+	                   	<li>3</li>
+	                   	<li>4</li>
+	                   	<li>5</li>
+	      			</ul>
+	    		</div>
+	  		</div>
+		</div>
+		<!--content end-->
+    </div>
+</div>
+<!--中下 start-->
+<div class="zhongxia juzhong">
+	<div style="width:5px;height:20px;background-color:red;position:absolute;left:40px;top:4px;"></div>
+	<p style="font-size:20px;margin-left:50px;margin-bottom:20px;">热门美食</p>
+	{% get_hot_food as foods %}
+	{% for food in foods %}
+	<ul>
+        <li><a href="{{ food.get_absolute_url }}" ><img src="{{ food.image }}" /></a></li>
+    </ul>
+    {% empty %}
+    <p>none</p>
+    {% endfor %}
+    
+    {% for food in foods %}
+    <ul id="wenzi">
+		<li><p>{{ food.name }}</p>{{ food.introduce }}</li>
+    </ul>
+    {% endfor %}
+</div>
+<!--中下 end-->
+{% endblock content %}

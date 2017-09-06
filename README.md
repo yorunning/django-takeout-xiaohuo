@@ -44,25 +44,25 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
 ## 3.功能介绍
-1.添加轮播图 (限定五张)
-------
+1. 添加轮播图 (限定五张)
+--------
 ![添加轮播图](readme_images/DeepinScreenshot_select-area_20170906221833.png)
 
-2.添加顶级菜系、二级菜系、菜单
+2. 添加顶级菜系、二级菜系、菜单
 
 ![](readme_images/DeepinScreenshot_select-area_20170906221817.png)
 ![](readme_images/深度录屏_google-chrome_20170906222626.gif)
 
-3.搜索
+3. 搜索
 
 ![](readme_images/DeepinScreenshot_select-area_20170906222913.png)
 
-4.登录、注册
+4. 登录、注册
 
 ![](readme_images/深度录屏_google-chrome_20170906223854.gif)
 ![](readme_images/深度录屏_google-chrome_20170906224004.gif)
 
-5.评论
+5. 评论
 
 ![](readme_images/DeepinScreenshot_select-area_20170906224714.png)
 ![](readme_images/深度录屏_google-chrome_20170906224753.gif)

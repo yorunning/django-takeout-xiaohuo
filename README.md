@@ -1,6 +1,9 @@
-# django-takeout-xiaohuo
-## 小伙外卖项目介绍
-本项目仅用于学习，也是我学习django的笔记，还有一些内容等待完善。
+django-takeout-xiaohuo
+======
+小伙外卖项目简介
+------
+本项目仅用于学习，也是我学习django的笔记，还有一些功能等待完善。
+在线预览：[小伙](106.14.196.122)
 
 1.运行环境
 -----
@@ -11,11 +14,10 @@
 ```
 python3 manage.py runserver
 ```
-后台 `localhost/admin/`
 
 2.数据库
 ------
-默认使用sqlite3,若使用mysql需进行如下配置
+默认使用sqlite3,若使用mysql需先创建名为`xiaohuo`的数据库，然后进行如下配置
 ```python
 # xiaohuo/setting.py
 # -表示删除 +表示增加
